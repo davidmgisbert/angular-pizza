@@ -1,0 +1,50 @@
+{
+   "productos":[
+      {
+         "nombre": "Coco-loco"
+         , "desc": "Coco ... del Caribe a tu casa"
+         , "precio": "max"
+         , "img" : "coco"
+      }
+      , {
+         "nombre": "Fresabor"
+         , "desc": "Un paquete de fresas para endulzarte el día"
+         , "precio": "max"
+         , "img" : "fresa"
+      }
+      , {
+         "nombre": "Kiwi"
+         , "desc": "Una fiesta de vitamina C"
+         , "precio": "med"
+         , "img" : "kiwi"
+      }
+      , {
+         "nombre": "Melocotón"
+         , "desc": "El postre del verano"
+         , "precio": "med"
+         , "img" : "melocoton"
+      }
+      ,{
+         "nombre": "Mora de la morería"
+         , "desc": "De los bosques más frondosos"
+         , "precio": "med"
+         , "img" : "mora"
+      }
+      ,{
+         "nombre": "Naran"
+         , "desc": "De la huerta valenciana"
+         , "precio": "min"
+         , "img" : "naranja"
+      }
+   ]
+   , "precios": {
+      "min": 1
+      , "med" : 2
+      , "max" : 3
+   }
+   , "factorPrecioTam" : {
+      "peq" : 0.8
+      , "med" : 1
+      , "fam" : 1.2
+   }
+}

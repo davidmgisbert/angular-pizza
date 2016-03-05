@@ -1,0 +1,18 @@
+<div>
+    <table>
+        <thead>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Imagen</th>
+        </thead>
+        <tbody>
+            <td><input type="text" name="nombre" ng-model="newitem.nombre"></td>
+            <td><input type="text" name="desc" ng-model="newitem.desc"></td>
+            <td><input type="text" name="precio" ng-model="newitem.precio"></td>
+            <td><input type="text" name="img" ng-model="newitem.img"></td>
+        </tbody>
+    </table>
+    <button class="btn btn-primary btn-lg" ng-click="addNew(newitem.nombre,newitem.desc,newitem.precio,newitem.img)">Añadir Nuevo Producto</button>
+</div>
+<br>

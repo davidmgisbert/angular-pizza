@@ -1,0 +1,93 @@
+
+<div ng-show="carrito.length > 0">
+    <p>Carrito</p>
+    <table border="1">
+        <thead>
+            <tr>
+                <th style="width:100px;">Nombre</th>
+                <th style="width:70px;">Cantidad</th>
+                <th style="width:100px;">Tamaño</th>
+				<th style="width:150px;">Precio Unidad</th>
+				<th style="width:150px;">Precio Total</th>
+                <th style="width:100px;">&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in carrito">
+                <td>{{ item.nombre }}</td>
+                <td>{{ item.cantidad }}</td>
+				<td>{{ item.tamano.name }}</td>
+                <td>{{ (item.precio * item.tamano.value ).toFixed(2)}}</td>
+				<td>{{ (item.precio * item.cantidad * item.tamano.value).toFixed(2)}}</td>
+                <td>
+					<button class="btn btn-danger btn-xs" ng-click="eliminarProducto(item.nombre,item.tamano, $index)">eliminar</button>
+                </td>
+            </tr>
+			<tr>
+					Precio total de caja : {{getTotal().toFixed(2)}}
+					<br>
+                    <br>
+					<p><qrcode version="40" error-correction-level="L" size="200" data="{{jsonCarrito()}}"></qrcode></p>
+			</tr>
+        </tbody>
+    </table> 
+</div>
+	
+
+<header>
+    <h1>
+        Bienvenido a la Pizzeria QR.	
+    </h1>
+</header>
+
+<section class="content">
+    <p>En nuestra pizzeria podrás traer tu pedido impreso en código QR desde casa y aquí te lo procesamos.</p>
+    <p>Disfruta de nuestras especialidades.</p>
+</section>
+
+<form class="menu" style="text-align: center">
+    <span  ng-repeat="tipo in tipoProductos">
+        <button class="btn btn-primary btn-lg" style="margin-right:10px;" ng-click="pizza('{{tipo.src}}');">{{tipo.name}}</button>
+    </span>
+</form>
+
+<div class="" style="text-align:center" ng-init="">
+    <ul class="pagination"> 
+        <li><a href ng-click="numeroDisposicion = 0">1</a></li> 
+        <li><a href ng-click="numeroDisposicion = 1">2</a></li>
+        <li><a href ng-click="numeroDisposicion = 2">3</a></li>
+    </ul>
+</div>
+
+<div class="tabla" style="float:left;{{disposiciones[numeroDisposicion].value}};text-align:center;" ng-repeat="producto in productos">
+    <p>{{producto.nombre}}</p>
+    <input type="hidden" ng-model="newItem.name" value="{{producto.nombre}}" />
+    <p>{{producto.desc}}</p>
+    <p><img src="./images/{{producto.img}}.png"></p>
+    <p><select style="width:40%; min-width:50px;" ng-model="initTam" name="tam" ng-options="tams as tams.name for tams in tam">
+        </select>
+    </p>
+    <p>
+        Cantidad: {{count}}
+        <input type="hidden" ng-model="newItem.count" value="{{count}}" />
+        <button ng-click="count = count + 1" ng-init="count=0">+</button>
+        <button ng-click="count = count<=0?0:count-1">-</button>
+    </p>
+    <p>Precio: {{(count*producto.precio*initTam.value).toFixed(2)}}</p>
+    <input type="hidden" ng-model="newItem.totalPrice" value="{{(count*producto.precio*initTam.value).toFixed(2)}}" />
+    <input type="hidden" ng-model="newItem.id" />
+    <button class="btn btn-primary btn-lg" ng-click="anadirCarrito(producto.nombre, producto.precio, initTam, count)" >Añadir</button>
+</div>
+
+      
+    
+
+<!--
+<div class="tabla" style="float:right; text-aling:center;">
+<div ng-repeat="elem in cart">
+<input type="checkbox" ng-model = "elem.seleccionado" ng-model="entotal"/>
+{{elem["cant"]}}*{{elem["nombre"]}} ({{elem["tam"]}})  {{elem["calcprecio"]}} € Total: {{entotal}}
+<button class="btn btn-primary btn-lg" ng-click="eliminar(elem)">Eliminar</button>
+</div>    
+</div>
+-->

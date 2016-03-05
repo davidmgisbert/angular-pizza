@@ -1,0 +1,50 @@
+{
+   "productos":[
+      {
+         "nombre": "Completa"
+         , "desc": "Con todos los ingredientes que caben"
+         , "precio": "max"
+         , "img" : "completa"
+      }
+      , { 
+         "nombre": "Margarita"
+         , "desc": "La original, solo tomate y queso"
+         , "precio": "min"
+         , "img" : "margarita"
+      }
+      , {
+         "nombre": "Peperoni"
+         , "desc": "Con nuestro delicioso peperoni importado"
+         , "precio": "med"
+         , "img" : "peperoni"
+      }
+      , {
+         "nombre": "Champiñona"
+         , "desc": "Con champiñones frescos recién cogidos"
+         , "precio": "med"
+         , "img" : "champis"
+      }
+      ,{
+         "nombre": "Champilla"
+         , "desc": "Con champiñones y cebolla caramelizada"
+         , "precio": "med"
+         , "img" : "champisCebolla"
+      }
+      ,{
+         "nombre": "Vegetal"
+         , "desc": "La alegría de la huerta"
+         , "precio": "max"
+         , "img" : "vegetal"
+      }
+   ]
+   , "precios": {
+      "min": 10
+      , "med" : 14
+      , "max" : 19
+   }
+   , "factorPrecioTam" : {
+      "peq" : 0.8
+      , "med" : 1
+      , "fam" : 1.2
+   }
+}

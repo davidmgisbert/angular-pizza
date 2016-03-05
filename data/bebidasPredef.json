@@ -1,0 +1,50 @@
+{
+   "productos":[
+      {
+         "nombre": "Agua"
+         , "desc": "Del manantial de agua más puro"
+         , "precio": "min"
+         , "img" : "agua"
+      }
+      , {
+         "nombre": "Cerveza"
+         , "desc": "Fresquita fresquita"
+         , "precio": "med"
+         , "img" : "cerveza"
+      }
+      , {
+         "nombre": "Refresco de Cola"
+         , "desc": "Nada más refrescante"
+         , "precio": "med"
+         , "img" : "refrescoCola"
+      }
+      , {
+         "nombre": "Refresco de Naranja"
+         , "desc": "Lo mejor para quitar la sed"
+         , "precio": "med"
+         , "img" : "refrescoNaranja"
+      }
+      ,{
+         "nombre": "Té Helado"
+         , "desc": "Como en el Caribe ..."
+         , "precio": "med"
+         , "img" : "teHelado"
+      }
+      ,{
+         "nombre": "Vino"
+         , "desc": "De las mejores bodegas de Rioja"
+         , "precio": "max"
+         , "img" : "vino"
+      }
+   ]
+   , "precios": {
+      "min": 1
+      , "med" : 1.6
+      , "max" : 2
+   }
+   , "factorPrecioTam" : {
+      "peq" : 0.8
+      , "med" : 1
+      , "fam" : 1.2
+   }
+}
