@@ -1,3 +1,4 @@
 .htaccess
 .buildignore
 bower_components/
+.idea
